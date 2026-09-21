@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: application
+  config:
+    import: aws-parameterstore:/myapp/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
+
+app:
+  name: application
+
+
+aws:
+  region:
+    static: ap-south-1
+
+
+#MAKE SURE TO CONNECT TO AWS VIA CLI USING "AWS configure" COMMAND
+#ADD YOUR CONFIG PARAM IN PARAMETER STORE IN AWS
